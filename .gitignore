@@ -1,1 +1,40 @@
+--- .gitignore (原始)
+node_modules/
+.next/
+dist/
+build/
+*.log
 
+
++++ .gitignore (修改后)
+# Dépendances
+node_modules/
+package-lock.json
+
+# Build
+dist/
+build/
+
+# Environnement
+.env
+.env.local
+.env.production
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp
+.cache/
+.tmp/
