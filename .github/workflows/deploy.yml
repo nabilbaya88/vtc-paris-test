@@ -1,7 +1,4 @@
---- deploy.yml
 
-
-+++ deploy.yml
 name: Deploy to GitHub Pages
 
 on:
