@@ -1,9 +1,7 @@
---- FICHIERS_PAGES/Reservation.tsx
+--- CORRECTION_Reservation.tsx 
 
 
-+++ FICHIERS_PAGES/Reservation.tsx 
-// src/pages/Reservation.tsx
-
++++ CORRECTION_Reservation.tsx 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -29,7 +27,7 @@ export default function Reservation() {
 
   const steps = [
     { id: 1, label: 'Trajet', icon: MapPin },
-    { id: 2, label: 'Véhicule', icon: Car },
+    { id: 2, label: 'Vehicule', icon: Car },
     { id: 3, label: 'Informations', icon: Users },
     { id: 4, label: 'Confirmation', icon: CheckCircle },
   ];
@@ -38,8 +36,8 @@ export default function Reservation() {
     {
       id: 'berline',
       name: 'Berline Premium',
-      desc: 'Mercedes Classe E ou équivalent',
-      price: '45€',
+      desc: 'Mercedes Classe E ou equivalent',
+      price: '45 EUR',
       capacity: '1-3 passagers',
       features: ['Cuir', 'Climatisation', 'WiFi', 'Eau offerte'],
       icon: '🚗',
@@ -47,8 +45,8 @@ export default function Reservation() {
     {
       id: 'van',
       name: 'Van de Luxe',
-      desc: 'Mercedes Classe V ou équivalent',
-      price: '75€',
+      desc: 'Mercedes Classe V ou equivalent',
+      price: '75 EUR',
       capacity: '1-7 passagers',
       features: ['Espace XL', 'Climatisation', 'WiFi', 'Prises USB'],
       icon: '🚐',
@@ -56,10 +54,10 @@ export default function Reservation() {
     {
       id: 'luxe',
       name: 'Gamme Luxe',
-      desc: 'Mercedes Classe S ou BMW Série 7',
-      price: '120€',
+      desc: 'Mercedes Classe S ou BMW Serie 7',
+      price: '120 EUR',
       capacity: '1-3 passagers',
-      features: ['Ultra-premium', 'Champagne', 'WiFi 5G', 'Sièges massants'],
+      features: ['Ultra-premium', 'Champagne', 'WiFi 5G', 'Sieges massants'],
       icon: '✨',
     },
   ];
@@ -74,21 +72,19 @@ export default function Reservation() {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
-            Réserver votre trajet
+            Reserver votre trajet
           </h1>
           <p className="text-slate-600">
-            Complétez les étapes ci-dessous pour réserver votre chauffeur privé
+            Completez les etapes ci-dessous pour reserver votre chauffeur prive
           </p>
         </motion.div>
 
-        {/* Progress Steps */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,13 +100,10 @@ export default function Reservation() {
                 transition={{ duration: 0.5 }}
               />
             </div>
-
             {steps.map((step) => (
               <div key={step.id} className="relative flex flex-col items-center z-10">
                 <motion.div
-                  animate={{
-                    scale: currentStep === step.id ? 1.1 : 1,
-                  }}
+                  animate={{ scale: currentStep === step.id ? 1.1 : 1 }}
                   className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${
                     currentStep >= step.id
                       ? 'bg-blue-500 border-blue-500 text-white shadow-lg shadow-blue-500/30'
@@ -133,7 +126,6 @@ export default function Reservation() {
           </div>
         </motion.div>
 
-        {/* Step Content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={currentStep}
@@ -143,53 +135,44 @@ export default function Reservation() {
             transition={{ duration: 0.3 }}
             className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8"
           >
-            {/* Step 1: Trajet */}
             {currentStep === 1 && (
               <div className="space-y-6">
                 <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-blue-500" />
-                  Détails du trajet
+                  Details du trajet
                 </h2>
-
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Point de départ
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Point de depart</label>
                     <div className="relative">
                       <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-500" />
                       <input
                         type="text"
                         value={formData.departure}
                         onChange={(e) => updateFormData('departure', e.target.value)}
-                        placeholder="Adresse de départ"
+                        placeholder="Adresse de depart"
                         className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       />
                     </div>
                   </div>
-
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Destination
-                    </label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Destination</label>
                     <div className="relative">
                       <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-green-500" />
                       <input
                         type="text"
                         value={formData.arrival}
                         onChange={(e) => updateFormData('arrival', e.target.value)}
-                        placeholder="Adresse d'arrivée"
+                        placeholder="Adresse d'arrivee"
                         className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       />
                     </div>
                   </div>
                 </div>
-
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">
-                      <Calendar className="w-4 h-4 inline mr-1" />
-                      Date
+                      <Calendar className="w-4 h-4 inline mr-1" />Date
                     </label>
                     <input
                       type="date"
@@ -200,8 +183,7 @@ export default function Reservation() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">
-                      <Clock className="w-4 h-4 inline mr-1" />
-                      Heure
+                      <Clock className="w-4 h-4 inline mr-1" />Heure
                     </label>
                     <input
                       type="time"
@@ -211,40 +193,29 @@ export default function Reservation() {
                     />
                   </div>
                 </div>
-
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Nombre de passagers
-                  </label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Nombre de passagers</label>
                   <div className="flex items-center gap-4">
                     <button
                       onClick={() => updateFormData('passengers', Math.max(1, formData.passengers - 1))}
                       className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition-colors text-slate-700 font-bold"
-                    >
-                      -
-                    </button>
-                    <span className="text-xl font-semibold text-slate-900 w-8 text-center">
-                      {formData.passengers}
-                    </span>
+                    >-</button>
+                    <span className="text-xl font-semibold text-slate-900 w-8 text-center">{formData.passengers}</span>
                     <button
                       onClick={() => updateFormData('passengers', Math.min(8, formData.passengers + 1))}
                       className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition-colors text-slate-700 font-bold"
-                    >
-                      +
-                    </button>
+                    >+</button>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Step 2: Véhicule */}
             {currentStep === 2 && (
               <div className="space-y-6">
                 <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
                   <Car className="w-5 h-5 text-blue-500" />
-                  Choisissez votre véhicule
+                  Choisissez votre vehicule
                 </h2>
-
                 <div className="grid gap-4">
                   {vehicles.map((vehicle) => (
                     <motion.div
@@ -294,22 +265,20 @@ export default function Reservation() {
               </div>
             )}
 
-            {/* Step 3: Informations */}
             {currentStep === 3 && (
               <div className="space-y-6">
                 <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
                   <Users className="w-5 h-5 text-blue-500" />
                   Vos informations
                 </h2>
-
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Prénom</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Prenom</label>
                     <input
                       type="text"
                       value={formData.firstName}
                       onChange={(e) => updateFormData('firstName', e.target.value)}
-                      placeholder="Votre prénom"
+                      placeholder="Votre prenom"
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     />
                   </div>
@@ -324,7 +293,6 @@ export default function Reservation() {
                     />
                   </div>
                 </div>
-
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
                   <input
@@ -335,9 +303,8 @@ export default function Reservation() {
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   />
                 </div>
-
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Téléphone</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Telephone</label>
                   <input
                     type="tel"
                     value={formData.phone}
@@ -346,15 +313,12 @@ export default function Reservation() {
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   />
                 </div>
-
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Notes supplémentaires (optionnel)
-                  </label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Notes supplementaires (optionnel)</label>
                   <textarea
                     value={formData.notes}
                     onChange={(e) => updateFormData('notes', e.target.value)}
-                    placeholder="Numéro de vol, instructions spéciales..."
+                    placeholder="Numero de vol, instructions speciales..."
                     rows={3}
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
                   />
@@ -362,29 +326,27 @@ export default function Reservation() {
               </div>
             )}
 
-            {/* Step 4: Confirmation */}
             {currentStep === 4 && (
               <div className="space-y-6">
                 <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  Récapitulatif & Confirmation
+                  Recapitulatif and Confirmation
                 </h2>
-
                 <div className="bg-slate-50 rounded-xl p-6 space-y-4">
                   <div className="flex justify-between items-center pb-3 border-b border-slate-200">
                     <span className="text-slate-600">Trajet</span>
                     <span className="font-medium text-slate-900">
-                      {formData.departure || 'Non renseigné'} → {formData.arrival || 'Non renseigné'}
+                      {formData.departure || 'Non renseigne'} → {formData.arrival || 'Non renseigne'}
                     </span>
                   </div>
                   <div className="flex justify-between items-center pb-3 border-b border-slate-200">
-                    <span className="text-slate-600">Date & Heure</span>
+                    <span className="text-slate-600">Date and Heure</span>
                     <span className="font-medium text-slate-900">
-                      {formData.date || 'Non renseigné'} à {formData.time || 'Non renseigné'}
+                      {formData.date || 'Non renseigne'} a {formData.time || 'Non renseigne'}
                     </span>
                   </div>
                   <div className="flex justify-between items-center pb-3 border-b border-slate-200">
-                    <span className="text-slate-600">Véhicule</span>
+                    <span className="text-slate-600">Vehicule</span>
                     <span className="font-medium text-slate-900">
                       {vehicles.find(v => v.id === formData.vehicleType)?.name}
                     </span>
@@ -402,34 +364,65 @@ export default function Reservation() {
                     </span>
                   </div>
                 </div>
-
                 <div className="bg-green-50 border border-green-200 rounded-xl p-4">
                   <div className="flex items-center gap-3">
                     <CreditCard className="w-5 h-5 text-green-600" />
                     <span className="text-sm text-green-700">
-                      Paiement sécurisé — Vous ne serez facturé qu'après confirmation du chauffeur
+                      Paiement securise - Vous ne serez facture qu'apres confirmation du chauffeur
                     </span>
                   </div>
                 </div>
-
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl p-6 text-center text-white"
                 >
                   <CheckCircle className="w-12 h-12 mx-auto mb-3 text-blue-200" />
-                  <h3 className="text-lg font-semibold mb-1">Prêt à confirmer ?</h3>
+                  <h3 className="text-lg font-semibold mb-1">Pret a confirmer ?</h3>
                   <p className="text-blue-200 text-sm">
-                    Cliquez sur "Confirmer la réservation" pour finaliser votre commande
+                    Cliquez sur Confirmer la reservation pour finaliser votre commande
                   </p>
                 </motion.div>
               </div>
             )}
 
-            {/* Navigation Buttons */}
             <div className="flex justify-between mt-8 pt-6 border-t border-slate-200">
               {currentStep > 1 ? (
                 <motion.button
                   whileHover={{ x: -3 }}
                   onClick={prevStep}
-                  className="flex items-center gap-2 px-5 py-2.
+                  className="flex items-center gap-2 px-5 py-2.5 text-slate-600 hover:text-slate-900 font-medium transition-colors"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Retour
+                </motion.button>
+              ) : (
+                <div />
+              )}
+              {currentStep < 4 ? (
+                <motion.button
+                  whileHover={{ x: 3 }}
+                  onClick={nextStep}
+                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300"
+                >
+                  Suivant
+                  <ArrowRight className="w-4 h-4" />
+                </motion.button>
+              ) : (
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => alert('Reservation confirmee ! Vous recevrez un email de confirmation.')}
+                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl shadow-lg shadow-green-500/30 hover:shadow-green-500/50 transition-all duration-300"
+                >
+                  <CheckCircle className="w-4 h-4" />
+                  Confirmer la reservation
+                </motion.button>
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
