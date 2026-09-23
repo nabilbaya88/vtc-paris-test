@@ -1,7 +1,7 @@
---- CORRECTION_Home.tsx 
+--- Home.tsx 
 
 
-+++ CORRECTION_Home.tsx 
++++ Home.tsx 
 import { motion } from 'framer-motion';
 import {
   Car, Clock, Shield, Star, MapPin, Users,
