@@ -1,9 +1,7 @@
---- FICHIERS_PAGES/Home.tsx
+--- CORRECTION_Home.tsx 
 
 
-+++ FICHIERS_PAGES/Home.tsx
-// src/pages/Home.tsx
-
++++ CORRECTION_Home.tsx 
 import { motion } from 'framer-motion';
 import {
   Car, Clock, Shield, Star, MapPin, Users,
@@ -19,54 +17,54 @@ export default function Home({ navigateTo }: HomeProps) {
   const services = [
     {
       icon: MapPin,
-      title: 'Transport Aéroport',
-      description: 'Transferts fiables vers tous les aéroports. Suivi de vol en temps réel.',
+      title: 'Transport Aeroport',
+      description: 'Transferts fiables vers tous les aeroports. Suivi de vol en temps reel.',
       color: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Clock,
-      title: 'Mise à disposition',
-      description: 'Chauffeur dédié à votre service pour la durée de votre choix.',
+      title: 'Mise a disposition',
+      description: 'Chauffeur dedie a votre service pour la duree de votre choix.',
       color: 'from-purple-500 to-pink-500',
     },
     {
       icon: Users,
       title: 'Transport Groupe',
-      description: 'Véhicules adaptés pour vos événements et déplacements en groupe.',
+      description: 'Vehicules adaptes pour vos evenements et deplacements en groupe.',
       color: 'from-orange-500 to-red-500',
     },
     {
       icon: Zap,
       title: 'Course Urgente',
-      description: 'Service express disponible 24h/24 pour vos déplacements imprévus.',
+      description: 'Service express disponible 24h/24 pour vos deplacements imprevus.',
       color: 'from-green-500 to-emerald-500',
     },
   ];
 
   const stats = [
-    { value: '10K+', label: 'Courses réalisées' },
+    { value: '10K+', label: 'Courses realisees' },
     { value: '4.9/5', label: 'Note moyenne' },
     { value: '50+', label: 'Chauffeurs pro' },
-    { value: '24/7', label: 'Disponibilité' },
+    { value: '24/7', label: 'Disponibilite' },
   ];
 
   const testimonials = [
     {
       name: 'Marie L.',
-      role: 'Cliente régulière',
-      text: 'Service impeccable ! Ponctualité et professionnalisme au rendez-vous à chaque course.',
+      role: 'Cliente reguliere',
+      text: 'Service impeccable ! Ponctualite et professionnalisme au rendez-vous a chaque course.',
       rating: 5,
     },
     {
       name: 'Thomas D.',
       role: "Homme d'affaires",
-      text: "J'utilise TranspVTC pour tous mes déplacements professionnels. Fiabilité exemplaire.",
+      text: "J'utilise TranspVTC pour tous mes deplacements professionnels. Fiabilite exemplaire.",
       rating: 5,
     },
     {
       name: 'Sophie M.',
       role: 'Touriste',
-      text: 'Accueil chaleureux, véhicule propre et confortable. Je recommande vivement !',
+      text: 'Accueil chaleureux, vehicule propre et confortable. Je recommande vivement !',
       rating: 5,
     },
   ];
@@ -126,7 +124,7 @@ export default function Home({ navigateTo }: HomeProps) {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg text-slate-300 mb-8 max-w-lg"
               >
-                Réservez votre chauffeur privé en quelques clics.
+                Reservez votre chauffeur prive en quelques clics.
                 Service disponible 24h/24, 7j/7 dans toute la France.
               </motion.p>
 
@@ -140,7 +138,7 @@ export default function Home({ navigateTo }: HomeProps) {
                   onClick={() => navigateTo('reservation')}
                   className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-2xl shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300"
                 >
-                  Réserver maintenant
+                  Reserver maintenant
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button
@@ -183,7 +181,7 @@ export default function Home({ navigateTo }: HomeProps) {
                       <CheckCircle className="w-5 h-5 text-green-400" />
                     </div>
                     <div>
-                      <div className="text-white text-sm font-medium">Réservation confirmée</div>
+                      <div className="text-white text-sm font-medium">Reservation confirmee</div>
                       <div className="text-slate-400 text-xs">Dans 15 minutes</div>
                     </div>
                   </div>
@@ -243,10 +241,10 @@ export default function Home({ navigateTo }: HomeProps) {
               Nos Services
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-              Des solutions adaptées à vos besoins
+              Des solutions adaptees a vos besoins
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Que ce soit pour un transfert aéroport, un déplacement professionnel ou un événement spécial,
+              Que ce soit pour un transfert aeroport, un deplacement professionnel ou un evenement special,
               nous avons la solution qu'il vous faut.
             </p>
           </motion.div>
@@ -287,18 +285,18 @@ export default function Home({ navigateTo }: HomeProps) {
             className="text-center mb-16"
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 rounded-full text-indigo-600 text-sm font-medium mb-4">
-              Comment ça marche
+              Comment ca marche
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-              Réservez en 3 étapes simples
+              Reservez en 3 etapes simples
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { step: '01', title: 'Choisissez votre trajet', desc: 'Indiquez votre point de départ et votre destination' },
-              { step: '02', title: 'Sélectionnez votre véhicule', desc: 'Berline, Van, ou véhicule de luxe selon vos besoins' },
-              { step: '03', title: 'Confirmez et partez', desc: "Votre chauffeur vous attend à l'heure convenue" },
+              { step: '01', title: 'Choisissez votre trajet', desc: 'Indiquez votre point de depart et votre destination' },
+              { step: '02', title: 'Selectionnez votre vehicule', desc: 'Berline, Van, ou vehicule de luxe selon vos besoins' },
+              { step: '03', title: 'Confirmez et partez', desc: "Votre chauffeur vous attend a l'heure convenue" },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -330,7 +328,7 @@ export default function Home({ navigateTo }: HomeProps) {
               onClick={() => navigateTo('reservation')}
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold rounded-2xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300"
             >
-              Commencer ma réservation
+              Commencer ma reservation
               <ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>
@@ -351,16 +349,16 @@ export default function Home({ navigateTo }: HomeProps) {
                 Pourquoi nous choisir
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-                L'excellence au service de vos déplacements
+                L'excellence au service de vos deplacements
               </h2>
               <div className="space-y-4">
                 {[
-                  'Chauffeurs professionnels certifiés',
-                  'Véhicules haut de gamme régulièrement contrôlés',
+                  'Chauffeurs professionnels certifies',
+                  'Vehicules haut de gamme regulierement controles',
                   'Tarification transparente sans surprise',
                   'Service client disponible 24h/24',
-                  "Annulation gratuite jusqu'à 1h avant",
-                  'Paiement sécurisé en ligne',
+                  "Annulation gratuite jusqu'a 1h avant",
+                  'Paiement securise en ligne',
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -386,14 +384,14 @@ export default function Home({ navigateTo }: HomeProps) {
               className="relative"
             >
               <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Réservation rapide</h3>
+                <h3 className="text-2xl font-bold mb-6">Reservation rapide</h3>
                 <div className="space-y-4">
                   <div className="bg-white/10 backdrop-blur rounded-xl p-4">
                     <div className="flex items-center gap-3 mb-2">
                       <MapPin className="w-5 h-5 text-blue-300" />
-                      <span className="text-sm">Point de départ</span>
+                      <span className="text-sm">Point de depart</span>
                     </div>
-                    <div className="text-white/80 text-sm">Aéroport Charles de Gaulle</div>
+                    <div className="text-white/80 text-sm">Aeroport Charles de Gaulle</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur rounded-xl p-4">
                     <div className="flex items-center gap-3 mb-2">
@@ -413,7 +411,7 @@ export default function Home({ navigateTo }: HomeProps) {
                     onClick={() => navigateTo('reservation')}
                     className="w-full py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors"
                   >
-                    Réserver →
+                    Reserver →
                   </button>
                 </div>
               </div>
@@ -433,7 +431,7 @@ export default function Home({ navigateTo }: HomeProps) {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 rounded-full text-yellow-600 text-sm font-medium mb-4">
               <Star className="w-4 h-4" />
-              Témoignages
+              Temoignages
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
               Ce que disent nos clients
@@ -487,16 +485,16 @@ export default function Home({ navigateTo }: HomeProps) {
             </div>
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                Prêt à voyager en toute sérénité ?
+                Pret a voyager en toute serenite ?
               </h2>
               <p className="text-blue-100 mb-8 max-w-xl mx-auto">
-                Réservez votre chauffeur privé dès maintenant et profitez d'un service d'exception.
+                Reservez votre chauffeur prive des maintenant et profitez d'un service d'exception.
               </p>
               <button
                 onClick={() => navigateTo('reservation')}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
-                Réserver mon trajet
+                Reserver mon trajet
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
