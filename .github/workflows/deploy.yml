@@ -1,8 +1,4 @@
---- FICHIERS_PAGES/deploy.yml 
 
-
-+++ FICHIERS_PAGES/deploy.yml 
-# .github/workflows/deploy.yml
 
 name: Deploy to GitHub Pages
 
