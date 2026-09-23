@@ -16,7 +16,7 @@
   50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.2); }
 }
 
-/* Custom _scrollbar */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
