@@ -1,9 +1,7 @@
---- FICHIERS_PAGES/EspaceChauffeur.tsx
+--- CORRECTION_EspaceChauffeur.tsx 
 
 
-+++ FICHIERS_PAGES/EspaceChauffeur.tsx
-// src/pages/EspaceChauffeur.tsx
-
++++ CORRECTION_EspaceChauffeur.tsx
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -431,4 +429,31 @@ export default function EspaceChauffeur() {
                       { date: '16 Jan', missions: 5, amount: '245€' },
                       { date: '15 Jan', missions: 4, amount: '198€' },
                       { date: '14 Jan', missions: 6, amount: '312€' },
-                      { date: '13 Jan
+                      { date: '13 Jan', missions: 3, amount: '156€' },
+                      { date: '12 Jan', missions: 5, amount: '267€' },
+                    ].map((day, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.05 }}
+                        className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0"
+                      >
+                        <div className="flex items-center gap-3">
+                          <Calendar className="w-4 h-4 text-slate-400" />
+                          <span className="text-slate-700">{day.date}</span>
+                          <span className="text-xs text-slate-400">({day.missions} missions)</span>
+                        </div>
+                        <span className="font-semibold text-slate-900">{day.amount}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
