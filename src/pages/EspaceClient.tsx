@@ -1,9 +1,7 @@
---- FICHIERS_PAGES/EspaceClient.tsx
+--- EspaceClient.tsx
 
 
-+++ FICHIERS_PAGES/EspaceClient.tsx
-// src/pages/EspaceClient.tsx
-
++++ EspaceClient.tsx
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -26,9 +24,9 @@ export default function EspaceClient() {
 
   const tabs = [
     { id: 'dashboard', label: 'Tableau de bord', icon: User },
-    { id: 'reservations', label: 'Mes réservations', icon: Car },
+    { id: 'reservations', label: 'Mes reservations', icon: Car },
     { id: 'factures', label: 'Factures', icon: FileText },
-    { id: 'parametres', label: 'Paramètres', icon: Settings },
+    { id: 'parametres', label: 'Parametres', icon: Settings },
   ];
 
   const reservations = [
@@ -36,19 +34,19 @@ export default function EspaceClient() {
       id: 'RES-2024-001',
       date: '15 Jan 2024',
       time: '14:30',
-      from: 'Aéroport CDG',
-      to: 'Paris 8ème',
-      status: 'Terminée',
-      price: '55€',
+      from: 'Aeroport CDG',
+      to: 'Paris 8eme',
+      status: 'Terminee',
+      price: '55 EUR',
     },
     {
       id: 'RES-2024-002',
       date: '22 Jan 2024',
       time: '09:00',
-      from: 'Paris 16ème',
+      from: 'Paris 16eme',
       to: 'Gare de Lyon',
       status: 'En cours',
-      price: '32€',
+      price: '32 EUR',
     },
     {
       id: 'RES-2024-003',
@@ -56,8 +54,8 @@ export default function EspaceClient() {
       time: '18:00',
       from: 'Bureau',
       to: 'Restaurant Le Meurice',
-      status: 'À venir',
-      price: '28€',
+      status: 'A venir',
+      price: '28 EUR',
     },
   ];
 
@@ -80,7 +78,7 @@ export default function EspaceClient() {
                 <User className="w-8 h-8 text-white" />
               </motion.div>
               <h1 className="text-2xl font-bold text-slate-900">Espace Client</h1>
-              <p className="text-slate-500 mt-2">Connectez-vous pour accéder à votre compte</p>
+              <p className="text-slate-500 mt-2">Connectez-vous pour acceder a votre compte</p>
             </div>
 
             <form onSubmit={handleLogin} className="space-y-5">
@@ -110,7 +108,7 @@ export default function EspaceClient() {
                     type={showPassword ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="••••••••"
+                    placeholder="........"
                     className="w-full pl-11 pr-12 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   />
                   <button
@@ -129,7 +127,7 @@ export default function EspaceClient() {
                   <span className="text-sm text-slate-600">Se souvenir de moi</span>
                 </label>
                 <a href="#" className="text-sm text-blue-600 hover:underline">
-                  Mot de passe oublié ?
+                  Mot de passe oublie ?
                 </a>
               </div>
 
@@ -147,7 +145,7 @@ export default function EspaceClient() {
               <p className="text-sm text-slate-500">
                 Pas encore de compte ?{' '}
                 <a href="#" className="text-blue-600 font-medium hover:underline">
-                  Créer un compte
+                  Creer un compte
                 </a>
               </p>
             </div>
@@ -160,7 +158,6 @@ export default function EspaceClient() {
   return (
     <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* Welcome Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -186,12 +183,11 @@ export default function EspaceClient() {
               className="flex items-center gap-2 px-4 py-2.5 bg-white rounded-xl border border-slate-200 shadow-sm text-slate-600 hover:text-red-500 transition-colors"
             >
               <LogOut className="w-4 h-4" />
-              <span className="text-sm font-medium">Déconnexion</span>
+              <span className="text-sm font-medium">Deconnexion</span>
             </motion.button>
           </div>
         </motion.div>
 
-        {/* Tabs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -214,7 +210,6 @@ export default function EspaceClient() {
           ))}
         </motion.div>
 
-        {/* Tab Content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -228,8 +223,8 @@ export default function EspaceClient() {
                 {[
                   { label: 'Courses totales', value: '24', icon: Car, color: 'from-blue-500 to-cyan-500' },
                   { label: 'Km parcourus', value: '486 km', icon: MapPin, color: 'from-green-500 to-emerald-500' },
-                  { label: 'Dépensé', value: '892€', icon: CreditCard, color: 'from-purple-500 to-pink-500' },
-                  { label: 'Note moyenne', value: '4.9 ★', icon: Star, color: 'from-yellow-500 to-orange-500' },
+                  { label: 'Depense', value: '892 EUR', icon: CreditCard, color: 'from-purple-500 to-pink-500' },
+                  { label: 'Note moyenne', value: '4.9 / 5', icon: Star, color: 'from-yellow-500 to-orange-500' },
                 ].map((stat, i) => (
                   <motion.div
                     key={i}
@@ -251,7 +246,7 @@ export default function EspaceClient() {
             {activeTab === 'reservations' && (
               <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
                 <div className="p-5 border-b border-slate-200">
-                  <h2 className="text-lg font-semibold text-slate-900">Mes réservations</h2>
+                  <h2 className="text-lg font-semibold text-slate-900">Mes reservations</h2>
                 </div>
                 <div className="divide-y divide-slate-200">
                   {reservations.map((res, i) => (
@@ -277,7 +272,7 @@ export default function EspaceClient() {
                         </div>
                         <div className="flex items-center gap-3">
                           <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            res.status === 'Terminée' ? 'bg-green-100 text-green-700' :
+                            res.status === 'Terminee' ? 'bg-green-100 text-green-700' :
                             res.status === 'En cours' ? 'bg-blue-100 text-blue-700' :
                             'bg-yellow-100 text-yellow-700'
                           }`}>
@@ -296,19 +291,19 @@ export default function EspaceClient() {
               <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-8 text-center">
                 <FileText className="w-12 h-12 text-slate-300 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">Vos factures</h3>
-                <p className="text-slate-500">Retrouvez ici l'historique de vos factures téléchargeables.</p>
+                <p className="text-slate-500">Retrouvez ici l'historique de vos factures telechargeables.</p>
               </div>
             )}
 
             {activeTab === 'parametres' && (
               <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-6">
-                <h2 className="text-lg font-semibold text-slate-900">Paramètres du compte</h2>
+                <h2 className="text-lg font-semibold text-slate-900">Parametres du compte</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Prénom</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Prenom</label>
                     <input
                       type="text"
-                      placeholder="Votre prénom"
+                      placeholder="Votre prenom"
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     />
                   </div>
@@ -330,7 +325,7 @@ export default function EspaceClient() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Téléphone</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Telephone</label>
                   <input
                     type="tel"
                     placeholder="+33 6 12 34 56 78"
