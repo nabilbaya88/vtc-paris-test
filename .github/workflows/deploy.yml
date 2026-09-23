@@ -1,7 +1,7 @@
---- CORRECTION_deploy.yml (原始)
+--- deploy.yml
 
 
-+++ CORRECTION_deploy.yml (修改后)
++++ deploy.yml
 name: Deploy to GitHub Pages
 
 on:
